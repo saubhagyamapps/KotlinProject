@@ -22,7 +22,7 @@ class NavigationBar : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         setSupportActionBar(toolbar)
         supportFragmentManager
                 .beginTransaction()
-                .replace(R.id.framelaout_view, BlankFragment.newInstance(), "rageComicList")
+                .replace(R.id.framelaout_view, HomeFragment.newInstance(), "rageComicList")
                 .commit()
 
         fab.setOnClickListener {
@@ -50,16 +50,16 @@ class NavigationBar : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         val fragment = when (id) {
 
             R.id.nav_camera -> {
-                Toast.makeText(this@NavigationBar, "BlankFragment", Toast.LENGTH_SHORT).show()
-                BlankFragment()
+                Toast.makeText(this@NavigationBar, "HomeFragment", Toast.LENGTH_SHORT).show()
+                HomeFragment()
             }
             R.id.nav_gallery -> {
-                Toast.makeText(this@NavigationBar, "BlankFragment2", Toast.LENGTH_SHORT).show()
-                BlankFragment2()
+                Toast.makeText(this@NavigationBar, "GameFragment", Toast.LENGTH_SHORT).show()
+                GameFragment()
             }
 
             else -> {
-                BlankFragment()
+                HomeFragment()
             }
         }
 
