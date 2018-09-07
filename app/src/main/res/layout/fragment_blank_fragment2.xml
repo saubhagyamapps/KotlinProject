@@ -7,9 +7,14 @@
 
     <TextView
         android:id="@+id/txtHelloword"
-        android:layout_centerInParent="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_centerInParent="true"
+        android:background="#A1B2C3"
+        android:padding="5dp"
+        android:text="@string/click_bcak_fragment"
+        android:textColor="#000"
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
 </RelativeLayout>
