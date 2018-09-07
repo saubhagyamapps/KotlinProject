@@ -1,5 +1,6 @@
 package com.example.android.kotlinproject
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -11,7 +12,7 @@ import kotlinx.android.synthetic.main.fragment_blank.view.*
 class BlankFragment : Fragment() {
 
     companion object {
-        fun newInstance()=BlankFragment()
+        fun newInstance() = BlankFragment()
     }
 
 
@@ -19,9 +20,10 @@ class BlankFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
 
         val view = inflater.inflate(R.layout.fragment_blank, container, false)
-        view.txtNameF.text = "hiiiii\nkeshu odedara"
+        val sharedPreferences = activity?.getSharedPreferences("data", Context.MODE_PRIVATE)
+        view.txtNameF.text = sharedPreferences?.getString("email", "")
         view.txtNameF.setOnClickListener {
-            startActivity(Intent(activity, MainActivity::class.java))
+            startActivity(Intent(activity, LoginActivity::class.java))
         }
         return view;
 

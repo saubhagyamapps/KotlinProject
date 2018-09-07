@@ -7,7 +7,6 @@ import android.support.design.widget.Snackbar
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
@@ -16,8 +15,7 @@ import kotlinx.android.synthetic.main.app_bar_main2.*
 
 
 class NavigationBar : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
-    var a: String = "b"
-    var b: String = "b"
+
     private val TAG = this::class.java.simpleName
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,13 +26,12 @@ class NavigationBar : AppCompatActivity(), NavigationView.OnNavigationItemSelect
                 .beginTransaction()
                 .replace(R.id.framelaout_view, BlankFragment.newInstance(), "rageComicList")
                 .commit()
-        if (a.equals(b)) {
-            Log.e(TAG, "hihihihihi")
-        }
+
         val fab = findViewById(R.id.fab) as FloatingActionButton
         fab.setOnClickListener {
             Snackbar.make(it, "Replace with your own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
+
         }
 
         val toggle = ActionBarDrawerToggle(
