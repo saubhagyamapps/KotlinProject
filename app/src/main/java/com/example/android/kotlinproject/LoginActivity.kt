@@ -8,8 +8,6 @@ import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class LoginActivity : AppCompatActivity() {
-    private val TAG = this::class.java.simpleName
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +30,7 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    fun isNullOrEmpty(str: String?): Boolean {
+    private fun isNullOrEmpty(str: String?): Boolean {
         if (str != null && !str.isEmpty())
             return false
         else

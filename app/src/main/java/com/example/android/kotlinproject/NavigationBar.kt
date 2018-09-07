@@ -1,7 +1,6 @@
 package com.example.android.kotlinproject
 
 import android.os.Bundle
-import android.support.design.widget.FloatingActionButton
 import android.support.design.widget.NavigationView
 import android.support.design.widget.Snackbar
 import android.support.v4.view.GravityCompat
@@ -16,7 +15,6 @@ import kotlinx.android.synthetic.main.app_bar_main2.*
 
 class NavigationBar : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
-    private val TAG = this::class.java.simpleName
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +25,6 @@ class NavigationBar : AppCompatActivity(), NavigationView.OnNavigationItemSelect
                 .replace(R.id.framelaout_view, BlankFragment.newInstance(), "rageComicList")
                 .commit()
 
-        val fab = findViewById(R.id.fab) as FloatingActionButton
         fab.setOnClickListener {
             Snackbar.make(it, "Replace with your own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null).show()
@@ -92,8 +89,12 @@ class NavigationBar : AppCompatActivity(), NavigationView.OnNavigationItemSelect
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         when (item.itemId) {
-            R.id.action_settings -> return true
-            else -> return super.onOptionsItemSelected(item)
+            R.id.action_settings -> {
+                return true
+            }
+            else -> {
+                return super.onOptionsItemSelected(item)
+            }
         }
     }
 
